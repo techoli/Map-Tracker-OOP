@@ -281,10 +281,8 @@ class App {
     if (!formEl)return
     console.log(formEl);
     const check  = this.#workouts.find(workinf => workinf.id === formEl.dataset.id)
-    // const check  = this.#workouts.find(workinf => console.log(typeof(workinf.id)))
-   ;
     console.log(this.#workouts);
-    // console.log(check);
+    
     
     this.#map.setView(check.coord,this.zoomLevel,{
       animate: true,
@@ -304,13 +302,12 @@ class App {
   _getMapdate(){
     const data = JSON.parse(localStorage.getItem('workout'))
     this.#workouts = data
-    // console.log(data);
     this.#workouts.forEach(work => {
       this._renderWorkout(work)
-      // this.renderWorkoutMarker(work)
+      
     })
   }
 }
 
 const app = new App();
-// console.log(app);
+
